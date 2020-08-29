@@ -23,41 +23,41 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="cordova-plugin-wkwebview-engine"
     version="1.2.2-dev">
-    <name>Cordova WKWebView Engine</name>
-    <description>Cordova WKWebView Engine Plugin</description>
-    <license>Apache 2.0</license>
-    <keywords>cordova,wkwebview,webview</keywords>
-    <repo>https://github.com/apache/cordova-plugin-wkwebview-engine</repo>
+  <name>Cordova WKWebView Engine</name>
+  <description>Cordova WKWebView Engine Plugin</description>
+  <license>Apache 2.0</license>
+  <keywords>cordova,wkwebview,webview</keywords>
+  <repo>https://github.com/apache/cordova-plugin-wkwebview-engine</repo>
 
-	<engines>
-        <engine name="cordova-ios" version=">=4.0.0 <6.0.0" />
-        <engine name="apple-ios" version=">=9.0" />
-	</engines>
+  <engines>
+    <engine name="cordova-ios" version=">=4.0.0-dev" />
+    <engine name="apple-ios" version=">=9.0" />
+  </engines>
 
-    <!-- ios -->
-    <platform name="ios">
-        <js-module src="src/www/ios/ios-wkwebview-exec.js" name="ios-wkwebview-exec">
-            <clobbers target="cordova.exec" />
-        </js-module>
+  <!-- ios -->
+  <platform name="ios">
+    <js-module src="src/www/ios/ios-wkwebview-exec.js" name="ios-wkwebview-exec">
+      <clobbers target="cordova.exec" />
+    </js-module>
 
-        <js-module src="src/www/ios/ios-wkwebview.js" name="ios-wkwebview">
-            <clobbers target="window.WkWebView" />
-        </js-module>
+    <js-module src="src/www/ios/ios-wkwebview.js" name="ios-wkwebview">
+      <clobbers target="window.WkWebView" />
+    </js-module>
 
-        <config-file target="config.xml" parent="/*">
-            <feature name="CDVWKWebViewEngine">
-                <param name="ios-package" value="CDVWKWebViewEngine" />
-            </feature>
-            <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
-        </config-file>
+    <config-file target="config.xml" parent="/*">
+      <feature name="CDVWKWebViewEngine">
+        <param name="ios-package" value="CDVWKWebViewEngine" />
+      </feature>
+      <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
+    </config-file>
 
-        <framework src="WebKit.framework" weak="true" />
+    <framework src="WebKit.framework" weak="true" />
 
-        <header-file src="src/ios/CDVWKWebViewEngine.h" />
-        <source-file src="src/ios/CDVWKWebViewEngine.m" />
-        <header-file src="src/ios/CDVWKWebViewUIDelegate.h" />
-        <source-file src="src/ios/CDVWKWebViewUIDelegate.m" />
-        <header-file src="src/ios/CDVWKProcessPoolFactory.h" />
-        <source-file src="src/ios/CDVWKProcessPoolFactory.m" />
-    </platform>
+    <header-file src="src/ios/CDVWKWebViewEngine.h" />
+    <source-file src="src/ios/CDVWKWebViewEngine.m" />
+    <header-file src="src/ios/CDVWKWebViewUIDelegate.h" />
+    <source-file src="src/ios/CDVWKWebViewUIDelegate.m" />
+    <header-file src="src/ios/CDVWKProcessPoolFactory.h" />
+    <source-file src="src/ios/CDVWKProcessPoolFactory.m" />
+  </platform>
 </plugin>
